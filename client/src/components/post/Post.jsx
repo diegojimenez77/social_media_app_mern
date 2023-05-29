@@ -16,7 +16,7 @@ export default function Post({post}) {
           setUser(res.data)
         };
         fetchUser();
-      },[])
+      },[post.userId]);
 
     const likeHandler = () => {
         setLike(isLiked ? like-1 : like+1);
@@ -28,7 +28,7 @@ export default function Post({post}) {
             <div className="postTop">
                 <div className="postTopLeft">
                     <img className="postProfileImg" 
-                    src={user.profilePicture || PF+"person/noAvatar.png"} 
+                    src={PF+user.profilePicture || PF+"person/noAvatar.png"} 
                     alt="" />
                     <span className="postUsername">
                         {user.username}</span>
